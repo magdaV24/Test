@@ -1,0 +1,253 @@
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --background: #a19380;
+  --background-table: #e2cbaa;
+  --font: #2d1c06;
+
+  --error-background: #741a23;
+  --error-button: #7d6a6d;
+  --error-font: #ddc7ca;
+
+  --accent: #A08BC0;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+table {
+  background-color: var(--background-table);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: var(--font);
+  width: 90vw;
+  height: 60vh;
+}
+
+.user-wrapper:hover {
+  cursor: pointer;
+  scale: 1.005;
+  background-color: #d6c9b5;
+}
+
+/*Loading component*/
+.loading-wrapper {
+  width: 99vw;
+  height: 100vh;
+  opacity: 0.7;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(158, 152, 146, 0.6);
+  color: var(--font);
+}
+
+/*Error component*/
+
+.error-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 2rem;
+}
+
+.error {
+  width: 20vw;
+  min-height: 10vh;
+  height: fit-content;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding: 1rem;
+  background-color: var(--error-background);
+  color: var(--error-font);
+}
+
+.error p {
+  font-size: 1.5rem;
+}
+
+.error button {
+  width: 4rem;
+  height: 3rem;
+  background-color: var(--error-button);
+  border: none;
+}
+
+.error button:hover {
+  cursor: pointer;
+}
+
+/* UserData component*/
+
+.user-data-wrapper {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background-color: var(--background-table);
+  border-radius: 0.7rem;
+  width: 50vw;
+  color: var(--font);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: fit-content;
+
+}
+
+.user-data-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-data-header .user-name{
+  font-size: 1.5rem;
+  color: var(--accent);
+}
+
+
+.user-data-header h2{
+  color: var(--accent);
+}
+
+.card-footer{
+  width: 100%;
+  height: 15vh;
+  background-color: var(--accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-footer .user-info{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-footer p{
+  padding: 0.5rem;
+}
+
+.user-data-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user-data-row {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-data-button {
+  width: 100%;
+  height: 3rem;
+  color: #d6c9b5;
+  background-color: var(--font);
+  border: none;
+  border-bottom-left-radius: 0.7rem;
+  border-bottom-right-radius: 0.7rem;
+}
+
+.user-data-button:hover {
+  scale: 1.005;
+  cursor: pointer;
+}
+
+/* CompanyCard component*/
+
+.company-card {
+  padding: 0.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.company-card-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-bs{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-card-header h5 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/*Map component*/
+
+.map-wrapper p{
+  padding: 0.4rem;
+}
+
+.map {
+  height: 30vh;
+  border-top-left-radius: 0.7rem;
+  border-top-right-radius: 0.7rem;
+}
+
+
+@media (min-width: 0) and (max-width: 700px) {
+  .card-footer .user-info {
+    flex-direction: column;
+  }
+}
+@media (min-width: 700px) {
+  .card-footer .user-info {
+    flex-direction: row;
+  }
+}
